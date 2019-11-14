@@ -1,3 +1,23 @@
-body {
-    background-color: black;
+#heading {
+    background-color: #3d4047;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#search {
+    margin-left: 15px;
+    background-color: #dadce0;
+    margin-bottom: 0px;
+}
+
+
+#button-addon2 {
+    background-color: #3d7eff;
+    color: white;
+}
+
+body{
+    height: 100%;
 }

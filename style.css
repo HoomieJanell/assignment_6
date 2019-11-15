@@ -48,7 +48,7 @@ body{
 
 .card-deck{
     width: 1050px;
-    height: 250px;
+    height: 255px;
     margin-left: 10px;
 }
 
@@ -58,4 +58,21 @@ body{
 
 #day1, #day2, #day3, #day4, #day5 {
     background-color: #3d7eff;
+}
+
+h2 {
+    margin-left: 30px;
+    margin-top: 25px;
+}
+
+body {
+    font-family: "Jazz LET", "Blippo", "Stencil Std", "Marker Felt";
+}
+
+h3 {
+    margin-top: 15px;
+}
+
+h1 {
+    margin-top: 10px;
 }

@@ -4,12 +4,13 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    padding: 10px;
 }
 
 #search {
     margin-left: 15px;
     background-color: #dadce0;
-    margin-bottom: 0px;
+    float: left;
 }
 
 
@@ -19,5 +20,42 @@
 }
 
 body{
-    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#middle {
+    margin-bottom: 0;
+
+}
+
+.container {
+    margin: 0px;
+}
+
+#answer {
+    margin-top: 15px;
+    height: 325px;
+    margin-left: 10px;
+}
+/* 
+#cardday1, #cardday2, #cardday3, #cardday4, #cardday5 {
+    background-color: #3d7eff;
+    height:280px;
+    width: 180px;
+    margin: 0px;
+} */
+
+.card-deck{
+    width: 1050px;
+    height: 250px;
+    margin-left: 10px;
+}
+
+.list-group-item {
+    font-size: 20px;
+}
+
+#day1, #day2, #day3, #day4, #day5 {
+    background-color: #3d7eff;
 }

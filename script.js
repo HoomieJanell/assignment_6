@@ -45,11 +45,17 @@ function getForecast() {
     if (city != '') {
         $.ajax({
             url: "https://api.openweathermap.org/data/2.5/forecast?q= + city + &mode=xml&units=imperial&cnt=5" + "&APPID=e23fca609692a7314eec46141d2fa55d",
-            success: function (data) {
+            // success: function (data) {
+            method: "GET",
+        })
+        .then(function(response) {
+            console.log(response);
+            var date = list.dt;
+            var temperature = list.main.temp;
+            var humidity = list.main.humidity;
 
-                var date = list.dt;
-                var temperature = list.main.temp;
-                var humidity = list.main.humidity;
+            // for var(i = 0; i < results.length; i++)
+        // })
 
                 for (var i = 1; i < 5; i++) {
 
@@ -88,11 +94,6 @@ function getForecast() {
                 <p> Humidity: + ${humidity}</p>
                 `)
                 }
-            }
-        })
+            })
+        }
     }
-}
-
-
-
-

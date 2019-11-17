@@ -4,7 +4,7 @@ $(document).ready(function() {
         var city = $("#city").val();
         if(city != ''){
             $.ajax({
-                url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=imperial" + "&APPID=e23fca609692a7314eec46141d2fa55d",
+                url: 'https://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=imperial" + "&APPID=e23fca609692a7314eec46141d2fa55d",
                 method: "GET",
                 success: function(data){
                     var widget = show(data);

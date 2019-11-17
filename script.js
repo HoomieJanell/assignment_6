@@ -22,7 +22,7 @@
 //     });
 // });
 
-$document.ready(function() {
+$(document).ready(function() {
     $('#button-addon2').click(function(){
         var city = $("#city").val();
         if(city != ''){
@@ -55,3 +55,35 @@ function show(data){
     "<h3>strong>Wind Speed</strong>: "+ data.wind.speed + " m/h</h3>" +
     "<h3>strong>Wind Direction</strong>: "+ data.wind.deg + "&deg</h3>" +
 }
+
+
+
+
+
+
+
+
+
+// var APIKey = "e23fca609692a7314eec46141d2fa55d";
+// var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
+// $.ajax({
+//     url: queryURL,
+//     method:"GET"
+// })
+// .then(function(response) {
+//     console.log(queryURL);
+//     console.log(response);
+
+//     $("#show").html("<h1" + response.name + "Weather Details</h1>");
+// });
+// //         // Transfer content to HTML
+// //         $(".city").html("<h1>" + response.name + " Weather Details</h1>");
+// //         $(".wind").text("Wind Speed: " + response.wind.speed);
+// //         $(".humidity").text("Humidity: " + response.main.humidity);
+// //         $(".temp").text("Temperature (F) " + response.main.temp);
+
+// //         console.log("Wind Speed: " + response.wind.speed);
+// //         console.log("Humidity: " + response.main.humidity);
+//         console.log("Temperature (F): " + response.main.temp);
+
+

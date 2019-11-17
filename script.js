@@ -1,26 +1,3 @@
-// $(document).ready(function() {
-//     $("#button-addon2").click(function()) {
-//         var city = $("#city").val();
-//         var key = "e23fca609692a7314eec46141d2fa55d";
-
-//         $.ajax({
-//             url: 'http://api.openweathermap.org/data/2.5/weather',
-//             dataType: 'json',
-//             type: 'GET',
-//             data: {q:city, appiid: key, units: 'imperial'},
-
-//             success: function(data){
-//                 var wf = '';
-//                 $.each(data.weather, function(index, val) {
-//                     wf += '<p><b>' + data.name + "</b>img scr=" + val.icon + ".png></p>" +
-//                     data.main.temp + '&deg;F' + ' | ' + val.main + "," + 
-//                     val.desciption 
-//                 });
-//                 $("#button-addon2").html(wf);
-//             }
-//         })
-//     });
-// });
 
 $(document).ready(function() {
     $('#button-addon2').click(function(){
@@ -28,17 +5,16 @@ $(document).ready(function() {
         if(city != ''){
             $.ajax({
                 url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=imperial" + "&APPID=e23fca609692a7314eec46141d2fa55d",
-                type: "GET",
-                dataType: "jsonp",
+                method: "GET",
                 success: function(data){
                     var widget = show(data);
 
                     $("#show").html(widget);
                     $("#city").val('');
+                    console.log(city);
+                    localStorage.setItem("search-history", city);
                 }
             });
-        }else{
-            $("#error").html('Field cannot be empty');
         }
     });
 });
@@ -58,31 +34,5 @@ function show(data){
 
 
 
-
-
-
-
-
-// var APIKey = "e23fca609692a7314eec46141d2fa55d";
-// var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
-// $.ajax({
-//     url: queryURL,
-//     method:"GET"
-// })
-// .then(function(response) {
-//     console.log(queryURL);
-//     console.log(response);
-
-//     $("#show").html("<h1" + response.name + "Weather Details</h1>");
-// });
-// //         // Transfer content to HTML
-// //         $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-// //         $(".wind").text("Wind Speed: " + response.wind.speed);
-// //         $(".humidity").text("Humidity: " + response.main.humidity);
-// //         $(".temp").text("Temperature (F) " + response.main.temp);
-
-// //         console.log("Wind Speed: " + response.wind.speed);
-// //         console.log("Humidity: " + response.main.humidity);
-//         console.log("Temperature (F): " + response.main.temp);
 
 

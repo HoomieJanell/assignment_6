@@ -39,74 +39,74 @@ $(document).ready(function () {
     });
 });
 
-function getForecast() {
-    var city = $("#city").val();
+// function getForecast() {
+//     var city = $("#city").val();
 
-    if (city != '') {
-        $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial" + "&cnt=5"+ "&APPID=e23fca609692a7314eec46141d2fa55d",
-            // url: "https://api.openweathermap.org/data/2.5/forecast?q= + city + "&mode=xml&units=imperial&cnt=5" + "&APPID=e23fca609692a7314eec46141d2fa55d",
-            // success: function (data) {
-            method: "GET",
-        })
-            .then(function (response) {
-                console.log(response);
-                var date = list.dt;
-                var temperature = list.main.temp;
-                var humidity = list.main.humidity;
-
-
-                $("#day1").text("<h1>" + list[1].dt + " Weather Details</h1>");
-
-                // $("#city").text("<h1>" + list.main.temp + " Weather Details</h1>");
+    // if (city != '') {
+    //     $.ajax({
+    //         url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial" + "&cnt=5"+ "&APPID=e23fca609692a7314eec46141d2fa55d",
+    //         // url: "https://api.openweathermap.org/data/2.5/forecast?q= + city + "&mode=xml&units=imperial&cnt=5" + "&APPID=e23fca609692a7314eec46141d2fa55d",
+    //         // success: function (data) {
+    //         method: "GET",
+    //     })
+    //         .then(function (response) {
+    //             console.log(response);
+    //             var date = list.dt;
+    //             var temperature = list.main.temp;
+    //             var humidity = list.main.humidity;
 
 
+    //             $("#day1").text("<h1>" + list[1].dt + " Weather Details</h1>");
 
-                // for var(i = 0; i < results.length; i++)
-                // })
+            
 
-                // for (var i = 1; i < 5; i++) {
+    //             // $("#city").text("<h1>" + list.main.temp + " Weather Details</h1>");
 
-                for(var i=0; i < data.list.length; i++){
 
-                //     $("#day1").append(`
-                // <p>${date}</p>
-                // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
-                // <p> Temperature: + ${temperature}</p>
-                // <p> Humidity: + ${humidity}</p>
-                // `)
 
-                //     $("#day2").append(`
-                // <p>${date}</p>
-                // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
-                // <p> Temperature: + ${temperature}</p>
-                // <p> Humidity: + ${humidity}</p>
-                // `)
+    //             // for var(i = 0; i < results.length; i++)
+    //             // })
 
-                //     $("#day3").append(`
-                // <p>${date}</p>
-                // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
-                // <p> Temperature: + ${temperature}</p>
-                // <p> Humidity: + ${humidity}</p>
-                // `)
+    //             // for (var i = 1; i < 5; i++) {
 
-                //     $("#day4").append(`
-                // <p>${date}</p>
-                // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
-                // <p> Temperature: + ${temperature}</p>
-                // <p> Humidity: + ${humidity}</p>
-                // `)
+    //             for(var i=0; i < data.list.length; i++){
 
-                //     $("#day5").append(`
-                // <p>${date}</p>
-                // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
-                // <p> Temperature: + ${temperature}</p>
-                // <p> Humidity: + ${humidity}</p>
-                // `)
+    //             }};
 
-                $("#day1").text(table += "<td>"+ data.list[i].main.temp + "&deg;F</td>";
-                table += "<td>"+ data.list[i].main.humidity + "%</td>";)
-                }
-            })
-    }
-}
+    //             //     $("#day1").append(`
+    //             // <p>${date}</p>
+    //             // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
+    //             // <p> Temperature: + ${temperature}</p>
+    //             // <p> Humidity: + ${humidity}</p>
+    //             // `)
+
+    //             //     $("#day2").append(`
+    //             // <p>${date}</p>
+    //             // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
+    //             // <p> Temperature: + ${temperature}</p>
+    //             // <p> Humidity: + ${humidity}</p>
+    //             // `)
+
+    //             //     $("#day3").append(`
+    //             // <p>${date}</p>
+    //             // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
+    //             // <p> Temperature: + ${temperature}</p>
+    //             // <p> Humidity: + ${humidity}</p>
+    //             // `)
+
+    //             //     $("#day4").append(`
+    //             // <p>${date}</p>
+    //             // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
+    //             // <p> Temperature: + ${temperature}</p>
+    //             // <p> Humidity: + ${humidity}</p>
+    //             // `)
+
+    //             //     $("#day5").append(`
+    //             // <p>${date}</p>
+    //             // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
+    //             // <p> Temperature: + ${temperature}</p>
+    //             // <p> Humidity: + ${humidity}</p>
+    //             // `)
+
+    //             // $("#day1").text(table += "<td>"+ data.list[i].main.temp + "&deg;F</td>";
+    //             // table += "<td>"+ data.list[i].main.humidity + "%</td>";

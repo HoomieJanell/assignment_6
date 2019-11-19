@@ -107,6 +107,3 @@ $(document).ready(function () {
     //             // <p> Temperature: + ${temperature}</p>
     //             // <p> Humidity: + ${humidity}</p>
     //             // `)
-
-    //             // $("#day1").text(table += "<td>"+ data.list[i].main.temp + "&deg;F</td>";
-    //             // table += "<td>"+ data.list[i].main.humidity + "%</td>";

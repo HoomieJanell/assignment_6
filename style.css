@@ -19,14 +19,15 @@
     color: white;
 }
 
-body{
-    margin-top: auto;
-    margin-bottom: auto;
+html, body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    min-height: 100%;
 }
 
 #middle {
     margin-bottom: 0;
-
 }
 
 .container {
@@ -66,7 +67,8 @@ h2 {
 }
 
 body {
-    font-family: "Jazz LET", "Blippo", "Stencil Std", "Marker Felt";
+    /* font-family: "Jazz LET", "Blippo", "Stencil Std", "Marker Felt"; */
+    font-family: 'Montserrat', sans-serif;
 }
 
 h3 {

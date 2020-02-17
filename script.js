@@ -6,7 +6,7 @@ $(document).ready(function () {
         var city = $("#city").val();
         if (city != '') {
             $.ajax({
-                url: 'https://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=imperial" + "&APPID=" + "e23fca609692a7314eec46141d2fa55d",
+                url: 'https://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=imperial&APPID=" + "e23fca609692a7314eec46141d2fa55d",
                 method: "GET",
                 success: function (data) {
                     var widget = show(data);
@@ -17,6 +17,47 @@ $(document).ready(function () {
                     localStorage.setItem("search-history", city);
                 }
             });
+
+
+            $.ajax({
+                url: 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + "&units=imperial&appid=" + "e23fca609692a7314eec46141d2fa55d",
+                method: "GET",
+                dataType: "jsonp",
+                success: function (data) {
+                    console.log("__________")
+                    console.log(data.list)
+                    console.log("_______")
+                    city = $("#city").val()
+                    for (var i = 0; i < data.list.length; i = i + 8) {
+
+                        // Creating and storing a div tag
+                        var futureWeather = $("<div class='card'>");
+
+                        // Creating a paragraph tag with the result item's rating
+                        var p1 = $("<div class='card-title'>").text(data.list[i].dt_txt);
+                        // var p2 = $("<div class='card-text'>").text("<img src='http://openweathermap.org/img/w/" + data.weather[i].icon + ".png'> ");
+                        var p3 = $("<div class='card-text'>").text("Temp: " + data.list[i].main.temp + "°");
+                        var p4 = $("<div class='card-text'>").text("Humidty: " + data.list[i].main.humidity + "%");
+        
+        
+                        futureWeather.append(p1);
+                        // futureWeather.append(p2);
+                        futureWeather.append(p3);
+                        futureWeather.append(p4);
+
+                        
+                        $(".card-deck").prepend(futureWeather);
+
+                        //$("#day1").innerText(city.name)
+                        console.log($("#city").val());
+                        //console.log(data.list[i].main.);
+                        console.log(data.list[i].main.temp);
+                        console.log(data.list[i].dt_txt);
+                        console.log(data.list[i].main.humidity);
+                
+                    }
+                }
+            })
         }
     });
 });
@@ -28,82 +69,7 @@ function show(data) {
         "<h4>Humidity: " + data.main.humidity + "%</4>" +
         "<h4>Minimum Temperature: " + data.main.temp_min + "&deg;F</h4>" +
         "<h4>Maximum Temperature: " + data.main.temp_max + "&deg;F</h4>" +
-        "<h4>UV Index: " + "4" + " </h4>" +
         "<h4>Wind Speed: " + data.wind.speed + " mph</h4>" +
         "<h4>Wind Direction: " + data.wind.deg + "&deg</h4>"
+
 }
-
-$(document).ready(function () {
-    $('#button-addon2').click(function () {
-        return getForecast();
-    });
-});
-
-// function getForecast() {
-//     var city = $("#city").val();
-
-    // if (city != '') {
-    //     $.ajax({
-    //         url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial" + "&cnt=5"+ "&APPID=e23fca609692a7314eec46141d2fa55d",
-    //         // url: "https://api.openweathermap.org/data/2.5/forecast?q= + city + "&mode=xml&units=imperial&cnt=5" + "&APPID=e23fca609692a7314eec46141d2fa55d",
-    //         // success: function (data) {
-    //         method: "GET",
-    //     })
-    //         .then(function (response) {
-    //             console.log(response);
-    //             var date = list.dt;
-    //             var temperature = list.main.temp;
-    //             var humidity = list.main.humidity;
-
-
-    //             $("#day1").text("<h1>" + list[1].dt + " Weather Details</h1>");
-
-            
-
-    //             // $("#city").text("<h1>" + list.main.temp + " Weather Details</h1>");
-
-
-
-    //             // for var(i = 0; i < results.length; i++)
-    //             // })
-
-    //             // for (var i = 1; i < 5; i++) {
-
-    //             for(var i=0; i < data.list.length; i++){
-
-    //             }};
-
-    //             //     $("#day1").append(`
-    //             // <p>${date}</p>
-    //             // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
-    //             // <p> Temperature: + ${temperature}</p>
-    //             // <p> Humidity: + ${humidity}</p>
-    //             // `)
-
-    //             //     $("#day2").append(`
-    //             // <p>${date}</p>
-    //             // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
-    //             // <p> Temperature: + ${temperature}</p>
-    //             // <p> Humidity: + ${humidity}</p>
-    //             // `)
-
-    //             //     $("#day3").append(`
-    //             // <p>${date}</p>
-    //             // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
-    //             // <p> Temperature: + ${temperature}</p>
-    //             // <p> Humidity: + ${humidity}</p>
-    //             // `)
-
-    //             //     $("#day4").append(`
-    //             // <p>${date}</p>
-    //             // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
-    //             // <p> Temperature: + ${temperature}</p>
-    //             // <p> Humidity: + ${humidity}</p>
-    //             // `)
-
-    //             //     $("#day5").append(`
-    //             // <p>${date}</p>
-    //             // <img src='https://openweathermap.org/img/w/"+ data.weather[0].icon+".png'>
-    //             // <p> Temperature: + ${temperature}</p>
-    //             // <p> Humidity: + ${humidity}</p>
-    //             // `)

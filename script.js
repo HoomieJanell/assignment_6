@@ -31,13 +31,13 @@ $(document).ready(function () {
                     for (var i = 0; i < data.list.length; i = i + 8) {
 
                         // Creating and storing a div tag
-                        var futureWeather = $("<div class='card'>");
+                        var futureWeather = $("<div class='card' id='forecastcards'>");
 
                         // Creating a paragraph tag with the result item's rating
-                        var p1 = $("<div class='card-title'>").text(data.list[i].dt_txt);
+                        var p1 = $("<div class='card-title' id='one'>").text(data.list[i].dt_txt);
                         // var p2 = $("<div class='card-text'>").text("<img src='http://openweathermap.org/img/w/" + data.weather[i].icon + ".png'> ");
-                        var p3 = $("<div class='card-text'>").text("Temp: " + data.list[i].main.temp + " &deg;F");
-                        var p4 = $("<div class='card-text'>").text("Humidty: " + data.list[i].main.humidity + "%");
+                        var p3 = $("<div class='card-text' id='two'>").text("Temp: " + data.list[i].main.temp + " &deg;F");
+                        var p4 = $("<div class='card-text' id='three'>").text("Humidty: " + data.list[i].main.humidity + "%");
         
         
                         futureWeather.append(p1);

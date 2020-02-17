@@ -36,7 +36,7 @@ $(document).ready(function () {
                         // Creating a paragraph tag with the result item's rating
                         var p1 = $("<div class='card-title'>").text(data.list[i].dt_txt);
                         // var p2 = $("<div class='card-text'>").text("<img src='http://openweathermap.org/img/w/" + data.weather[i].icon + ".png'> ");
-                        var p3 = $("<div class='card-text'>").text("Temp: " + data.list[i].main.temp + "°");
+                        var p3 = $("<div class='card-text'>").text("Temp: " + data.list[i].main.temp + " &deg;F");
                         var p4 = $("<div class='card-text'>").text("Humidty: " + data.list[i].main.humidity + "%");
         
         

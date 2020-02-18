@@ -34,14 +34,14 @@ $(document).ready(function () {
                         var futureWeather = $("<div class='card' id='forecastcards'>");
 
                         // Creating a paragraph tag with the result item's rating
-                        var p1 = $("<div class='card-title' id='one'>").text(data.list[i].dt_txt);
-                        // var p2 = $("<div class='card-text'>").text("<img src='http://openweathermap.org/img/w/" + data.weather[i].icon + ".png'> ");
-                        var p3 = $("<div class='card-text' id='two'>").text("Temp: " + data.list[i].main.temp + " &deg;F");
+                        var p1 = $("<div class='card-title' id='one'>").text(data.list[i].dt_txt.slice(0, 10));
+                        var p2 = $("<div class='card-text'>").html("<img src='http://openweathermap.org/img/w/" + data.list[i].weather.icon);
+                        var p3 = $("<div class='card-text' id='two'>").text("Temp: " + data.list[i].main.temp + " degrees Fahrenheit");
                         var p4 = $("<div class='card-text' id='three'>").text("Humidty: " + data.list[i].main.humidity + "%");
         
         
                         futureWeather.append(p1);
-                        // futureWeather.append(p2);
+                        futureWeather.append(p2);
                         futureWeather.append(p3);
                         futureWeather.append(p4);
 
@@ -50,9 +50,8 @@ $(document).ready(function () {
 
                         //$("#day1").innerText(city.name)
                         console.log($("#city").val());
-                        //console.log(data.list[i].main.);
                         console.log(data.list[i].main.temp);
-                        console.log(data.list[i].dt_txt);
+                        console.log(data.list[i].dt_txt.slice(0, 10));
                         console.log(data.list[i].main.humidity);
                 
                     }
@@ -63,7 +62,7 @@ $(document).ready(function () {
 });
 
 function show(data) {
-    return "<h4 style='font-size:30px; font-weight: bold; class='text-center'>Current Weather for " + data.name + " " + "<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'> " + "</h4>" +
+    return "<h4 style='font-size:30px; font-weight: bold; class='text-center'>Today's Weather for " + data.name + " " + "<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'> " + "</h4>" +
         "<h4>Weather: " + data.weather[0].main + "</h4>" +
         "<h4>Current Temperature: " + data.main.temp + "&deg;F</h4>" +
         "<h4>Humidity: " + data.main.humidity + "%</4>" +

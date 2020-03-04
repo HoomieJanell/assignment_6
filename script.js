@@ -32,10 +32,11 @@ $(document).ready(function () {
 
                         // Creating and storing a div tag
                         var futureWeather = $("<div class='card' id='forecastcards'>");
-
+                        var image = "src='http://openweathermap.org/img/w/' + data.list[i].weather.icon"
+                      
                         // Creating a paragraph tag with the result item's rating
                         var p1 = $("<div class='card-title' id='one'>").text(data.list[i].dt_txt.slice(0, 10));
-                        var p2 = $("<div class='card-text'>").html("<img src='http://openweathermap.org/img/w/" + data.list[i].weather.icon);
+                        var p2 = $("<div class='icons'>").html(`<img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png">`);
                         var p3 = $("<div class='card-text' id='two'>").text("Temp: " + data.list[i].main.temp + " degrees Fahrenheit");
                         var p4 = $("<div class='card-text' id='three'>").text("Humidty: " + data.list[i].main.humidity + "%");
         
@@ -46,7 +47,7 @@ $(document).ready(function () {
                         futureWeather.append(p4);
 
                         
-                        $(".card-deck").prepend(futureWeather);
+                        $(".card-deck").append(futureWeather);
 
                         //$("#day1").innerText(city.name)
                         console.log($("#city").val());
